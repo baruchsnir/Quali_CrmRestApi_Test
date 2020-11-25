@@ -1,0 +1,47 @@
+        boolean firstRowZero = false;
+        boolean firstColumnZero = false;
+ 
+        //set first row and column zero or not
+        for(int i=0; i<matrix.size(); i++){
+            if(matrix.get(i).get(0) == 0){
+                firstColumnZero = true;
+                break;
+            }
+        }
+ 
+        for(int i=0; i<matrix.get(0).size(); i++){
+            if(matrix.get(0).get(i) == 0){
+                firstRowZero = true;
+                break;
+            }
+        }
+ 
+        //mark zeros on first row and column
+        for(int i=1; i<matrix.size(); i++){
+            for(int j=1; j<matrix.get(0).size(); j++){
+                if(matrix.get(i).get(j) == 0){
+                   matrix.get(i).set(0,0);
+                   matrix.get(0).set(j,0);
+                }
+            }
+        }
+ 
+        //use mark to set elements
+        for(int i=1; i<matrix.length; i++){
+            for(int j=1; j<matrix.get(0).size(); j++){
+                if(matrix.get(i)get(0) == 0 || matrix.get(0).get(j) == 0){
+                   matrix.get(i).set(j,0);
+                }
+            }
+        }
+ 
+        //set first column and row
+        if(firstColumnZero){
+            for(int i=0; i<matrix.length; i++)
+                matrix.get(i).set(0, 0);
+        }
+ 
+        if(firstRowZero){
+            for(int i=0; i<matrix.get(0).size(); i++)
+                matrix.get(0).set(i,0);
+        }
