@@ -146,7 +146,7 @@ def get_accounts_by_filter(request,accounts_f):
         if acount_id is not None:
             accounts = []
             for account in accounts_f:
-                if account.acount_id == acount_id:
+                if str(account.acount_id) == str(acount_id):
                     accounts.append(account)
         else:
             # Get filter by account_name - if we send the command http://127.0.0.1:8000/accounts/?account_name=Home
@@ -154,7 +154,7 @@ def get_accounts_by_filter(request,accounts_f):
             if account_name is not None:
                 accounts = []
                 for account in accounts_f:
-                    if account.account_name == account_name:
+                    if str(account.account_name) == str(account_name):
                         accounts.append(account)
             else:
                 accounts = accounts_f
